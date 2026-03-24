@@ -3,9 +3,9 @@
 Ce projet, réalisé dans le cadre du cursus Économie Appliquée, Statistique et Big Data à l'INSEA, implémente un système capable de décrire le contenu d'une image en langage naturel. L'objectif est de produire automatiquement une phrase qui capture l'essence d'une scène visuelle.
 
 ## 🚀 Présentation du Modèle
-Le travail suit la structure du modèle **Show and Tell**[cite: 11]:
-**Encodeur (Vision) :** Utilisation d'un CNN pré-entraîné (**InceptionV3**). [cite_start]En retirant la couche de classification finale, on récupère un vecteur de caractéristiques de dimension 2048 représentant les motifs visuels.
-**Décodeur (Langage) :** Un réseau **LSTM** qui génère la phrase mot par mot[cite: 11, 22]. [cite_start]À chaque pas de temps, il prédit le mot suivant en se basant sur l'image et les mots précédents.
+Le travail suit la structure du modèle Show and Tell:
+Encodeur (Vision) : Utilisation d'un CNN pré-entraîné (InceptionV3). En retirant la couche de classification finale, on récupère un vecteur de caractéristiques de dimension 2048 représentant les motifs visuels (objets, textures, couleurs).
+Décodeur (Langage) : Un réseau LSTM qui génère la phrase mot par mot. À chaque pas de temps, il prédit le mot suivant en se basant sur l'image et sur tous les mots précédents.
 
 * ## 📊 Dataset : Flickr8k
 [cite_start]Le modèle est entraîné sur le **Flickr8k Dataset**[cite: 25, 27]:
