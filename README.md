@@ -1,32 +1,27 @@
 # Génération Automatique de Légendes d'Images (Image Captioning) 📸📝
 
-[cite_start]Ce projet, réalisé dans le cadre du cursus **Économie Appliquée, Statistique et Big Data à l'INSEA** [cite: 5][cite_start], implémente un système capable de décrire le contenu d'une image en langage naturel[cite: 17]. [cite_start]L'objectif est de produire automatiquement une phrase qui capture l'essence d'une scène visuelle[cite: 10].
+Ce projet, réalisé à l'INSEA, implémente un système capable de décrire le contenu d'une image en langage naturel.
 
 ## 🚀 Présentation du Modèle
-[cite_start]Le travail suit la structure du modèle **Show and Tell**[cite: 11]:
-* [cite_start]**Encodeur (Vision) :** Utilisation d'un CNN pré-entraîné (**InceptionV3**)[cite: 66, 134]. [cite_start]En retirant la couche de classification finale, on récupère un vecteur de caractéristiques de dimension 2048 représentant les motifs visuels[cite: 140].
-* [cite_start]**Décodeur (Langage) :** Un réseau **LSTM** qui génère la phrase mot par mot[cite: 11]. [cite_start]À chaque pas de temps, il prédit le mot suivant en se basant sur l'image et les mots précédents[cite: 22, 150].
+Le travail suit la structure du modèle **Show and Tell** :
+* **Encodeur (Vision) :** Utilisation d'un CNN pré-entraîné (**InceptionV3**). En retirant la couche de classification finale, on récupère un vecteur de caractéristiques représentant les motifs visuels.
+* **Décodeur (Langage) :** Un réseau **LSTM** qui génère la phrase mot par mot en se basant sur l'image et les mots précédents.
 
 ## 📊 Dataset : Flickr8k
-[cite_start]Le modèle est entraîné sur le **Flickr8k Dataset**[cite: 25, 27]:
-* [cite_start]**8 000 images** représentant une grande variété de scènes quotidiennes[cite: 27, 29].
-* [cite_start]**40 000 légendes** au total (5 par image), ce qui favorise l'apprentissage d'un langage varié[cite: 28, 32].
-* [cite_start]**Prétraitement :** Nettoyage du texte (minuscules, retrait de la ponctuation) [cite: 90, 99] [cite_start]et ajout des tokens `start` et `end` pour structurer la génération de séquences[cite: 102, 103].
+Le modèle est entraîné sur le **Flickr8k Dataset** :
+* **8 000 images** représentant des scènes quotidiennes.
+* **40 000 légendes** au total (5 par image) pour un apprentissage riche.
+* **Prétraitement :** Nettoyage du texte et ajout des tokens `start` et `end` pour structurer la génération.
 
-## 🛠️ Détails de l'Entraînement
-* [cite_start]**Vocabulaire :** Le modèle gère un dictionnaire de **8 586 mots**[cite: 130].
-* [cite_start]**Optimiseur :** Utilisation d'**Adam** [cite: 161] [cite_start]avec un taux d'apprentissage adaptatif [cite: 164] [cite_start]et un *clipnorm* de 1.0 pour stabiliser les gradients[cite: 166].
-* [cite_start]**Régularisation :** Mise en place de l'**EarlyStopping** pour éviter le surapprentissage [cite: 168] [cite_start]et d'un **LearningRateScheduler** pour affiner la convergence[cite: 169].
-
-## 🏆 Résultats : Greedy Search vs Beam Search
-[cite_start]Nous avons comparé deux méthodes de génération sur des images de test[cite: 195]:
-1. [cite_start]**Greedy Search :** Sélectionne le mot avec la probabilité maximale à chaque étape[cite: 188]. [cite_start]Résultat : *"a dog running in the snow"*[cite: 197].
-2. [cite_start]**Beam Search (K=5) :** Explore plusieurs phrases candidates en parallèle[cite: 191]. [cite_start]Résultat : *"a tan dog is running in the snow"*[cite: 207], offrant une description plus précise.
+## 🏆 Résultats : Greedy vs Beam Search
+Nous avons comparé deux méthodes de génération :
+1. **Greedy Search :** Sélectionne le mot le plus probable. Résultat : *"a dog running in the snow"*.
+2. **Beam Search (K=5) :** Explore plusieurs phrases en parallèle. Résultat : *"a tan dog is running in the snow"*.
 
 ## 👥 Équipe du Projet
-* [cite_start]**Hajar Chaib** [cite: 4]
-* [cite_start]**Lamya Hajjou** [cite: 2]
-* [cite_start]**Sara Karim** [cite: 2]
-* [cite_start]**Elmardi Mouad** [cite: 3]
+* **Hajar Chaib**
+* **Lamya Hajjou**
+* **Sara Karim**
+* **Elmardi Mouad**
 
-[cite_start]**Année universitaire :** 2025-2026 [cite: 6]
+**Année universitaire :** 2025-2026
