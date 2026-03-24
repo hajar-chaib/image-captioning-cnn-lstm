@@ -1,11 +1,11 @@
 # Génération Automatique de Légendes d'Images (Image Captioning) 📸📝
 
-[cite_start]Ce projet, réalisé dans le cadre du cursus **Économie Appliquée, Statistique et Big Data à l'INSEA** [cite: 5][cite_start], implémente un système capable de décrire le contenu d'une image en langage naturel[cite: 17]. [cite_start]L'objectif est de produire automatiquement une phrase qui capture l'essence d'une scène visuelle[cite: 17, 37].
+Ce projet, réalisé dans le cadre du cursus Économie Appliquée, Statistique et Big Data à l'INSEA, implémente un système capable de décrire le contenu d'une image en langage naturel. L'objectif est de produire automatiquement une phrase qui capture l'essence d'une scène visuelle.
 
 ## 🚀 Présentation du Modèle
-[cite_start]Le travail suit la structure du modèle **Show and Tell**[cite: 11]:
-* [cite_start]**Encodeur (Vision) :** Utilisation d'un CNN pré-entraîné (**InceptionV3**)[cite: 66, 139]. [cite_start]En retirant la couche de classification finale, on récupère un vecteur de caractéristiques de dimension 2048 représentant les motifs visuels[cite: 140].
-* [cite_start]**Décodeur (Langage) :** Un réseau **LSTM** qui génère la phrase mot par mot[cite: 11, 22]. [cite_start]À chaque pas de temps, il prédit le mot suivant en se basant sur l'image et les mots précédents[cite: 22, 150].
+Le travail suit la structure du modèle **Show and Tell**[cite: 11]:
+**Encodeur (Vision) :** Utilisation d'un CNN pré-entraîné (**InceptionV3**). [cite_start]En retirant la couche de classification finale, on récupère un vecteur de caractéristiques de dimension 2048 représentant les motifs visuels.
+**Décodeur (Langage) :** Un réseau **LSTM** qui génère la phrase mot par mot[cite: 11, 22]. [cite_start]À chaque pas de temps, il prédit le mot suivant en se basant sur l'image et les mots précédents.
 
 * ## 📊 Dataset : Flickr8k
 [cite_start]Le modèle est entraîné sur le **Flickr8k Dataset**[cite: 25, 27]:
